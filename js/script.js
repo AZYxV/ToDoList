@@ -13,10 +13,13 @@ input.addEventListener("keypress", function(event) {
 function add(){
     var i = 1;
     if (input.value == 'undefined' || input.value == ''){
-        alert('Please write something');
+        input.placeholder = 'Please write something';
+        input.classList.add('wrong');
     }
     else
     {
+        input.placeholder = 'write something';
+        input.classList.remove('wrong');
         var li = document.createElement('li');
         li.appendChild(document.createTextNode(input.value));
         ul.appendChild(li);

@@ -74,6 +74,7 @@ ul{
 }
 
 li{
+    color: #293241;
     text-align: left;
     list-style: none;
     font-size: 2rem;
@@ -98,6 +99,10 @@ li > button{
 
 li > button:hover{
     cursor: pointer;
+}
+
+.wrong::placeholder{
+    color: #ee6c4d;
 }
 
 .done {
