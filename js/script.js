@@ -1,27 +1,43 @@
-input = document.getElementById('input');
+var input = document.getElementById('input');
+var ul = document.querySelector("ul");
+var item = document.getElementsByTagName("li");
 
 input.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
     if (event.key === "Enter") {
-      // Cancel the default action, if needed
       event.preventDefault();
-      // Trigger the button element with a click
       document.getElementById("send").click();
     }
   });
 
+
+
 function add(){
-    var element = document.getElementById('input').value;
     var i = 1;
-    if (element == 'undefined' || element== ''){
+    if (input.value == 'undefined' || input.value == ''){
         alert('Please write something');
     }
     else
     {
-        var p = document.createElement('p');
-        p.textContent = element;
-        document.getElementById('input').value = "";
+        var ul = document.getElementById('task');
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode(input.value));
+        ul.appendChild(li);
+	    input.value = "";
 
-        task.appendChild(p,task);
+        function toggledone(){
+            li.classList.toggle("done");
+        }
+        
+        li.addEventListener("click",toggledone);
+
+        var dBtn = document.createElement("button");
+        dBtn.appendChild(document.createTextNode('X'));
+        li.appendChild(dBtn);
+        dBtn.addEventListener("click", deleteListItem);
+
+        function deleteListItem(){
+            li.classList.add("delete")
+        }
+
     }
 }
