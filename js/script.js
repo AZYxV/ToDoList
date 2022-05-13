@@ -1,6 +1,5 @@
 var input = document.getElementById('input');
 var ul = document.querySelector("ul");
-var item = document.getElementsByTagName("li");
 
 input.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -18,7 +17,6 @@ function add(){
     }
     else
     {
-        var ul = document.getElementById('task');
         var li = document.createElement('li');
         li.appendChild(document.createTextNode(input.value));
         ul.appendChild(li);
