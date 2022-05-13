@@ -48,12 +48,12 @@ div{
 }
 
 p{
-    text-align: center;
+    text-align: left;
     border-radius: 5px;
     font-size: 2rem;
     text-transform: uppercase;
     padding: 1rem;
     border: 1px solid black;
-    max-width: 10rem;
+    width: 50%;
     margin: 1rem;
 }
